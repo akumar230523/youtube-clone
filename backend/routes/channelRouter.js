@@ -11,3 +11,4 @@ channelRouter.put("/edit/:channelId", auth, editChannel);                 // Edi
 channelRouter.delete("/delete/:channelId", auth, deleteChannel);          // Delete channel
 
 export default channelRouter;
+

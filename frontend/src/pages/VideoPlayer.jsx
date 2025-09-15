@@ -51,7 +51,7 @@ const VideoPlayer = () => {
         fetchVideo();
     }, [videoId]);
 
-    // Fetches channel avatar URL once the video data is available.
+    // Fetches channel avatar url once the video data is available.
     useEffect(() => {
         if (!video) return;
 

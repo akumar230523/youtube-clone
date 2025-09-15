@@ -18,9 +18,9 @@ app.use("/channels", channelRouter);
 app.use("/users", userRouter);
 app.use("/videos", videoRouter);
 
-// Function to connect to database and start server
 const PORT = process.env.PORT || 5000;
 
+// Function to connect to database and start server.
 const startServer = async () => {
     try {
         await connectDB();
