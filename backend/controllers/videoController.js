@@ -71,7 +71,7 @@ export const deleteVideo = async (req, res) => {
     }
 };
 
-// Add comment to the Video.
+// Add a comment to the Video.
 export const addComment = async (req, res) => {
     const { videoId, userId, commentText } = req.body;
     try {
@@ -87,7 +87,7 @@ export const addComment = async (req, res) => {
     }
 };
 
-// Delete comment from the Video.
+// Delete a comment from the Video.
 export const deleteComment = async (req, res) => {
     const { videoId, userId, commentId } = req.body;
     try {

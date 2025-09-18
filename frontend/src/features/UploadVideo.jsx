@@ -37,7 +37,7 @@ const UploadVideo = () => {
                 headers: { Authorization: `Bearer ${token}` } 
             });
             toast.success(response.data?.message || "Video uploaded Successfully..");
-            navigate('/profile');
+            navigate(`/channel/${user.channels[0]}`);
         }
         catch (error) {
             toast.error(error.response?.data?.message || "Failed to upload video..");

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import api from "../services/api";
@@ -6,6 +6,8 @@ import api from "../services/api";
 import "../styles/Card/ProfileCard.css";
 
 const ProfileCard = ({ video }) => {
+
+    const navigate = useNavigate();
 
     const handleDeleteVideo = async() => {
         const confirmDelete = window.confirm("Are you sure you want to delete this video?");
@@ -17,7 +19,7 @@ const ProfileCard = ({ video }) => {
                 headers: { Authorization: `Bearer ${token}` },
             });
             toast.success(response.data?.message || "Video deleted successfully..");
-            window.location.reload();
+            navigate(`/channel/${video.channelId}`);
         }
         catch (error) {
             toast.error(error.response?.data?.message || "Failed to delete video..");
@@ -38,3 +40,5 @@ const ProfileCard = ({ video }) => {
 };
 
 export default ProfileCard;
+
+
